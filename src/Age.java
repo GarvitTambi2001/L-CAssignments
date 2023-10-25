@@ -1,3 +1,0 @@
-interface Age {
-    String describe();
-}
