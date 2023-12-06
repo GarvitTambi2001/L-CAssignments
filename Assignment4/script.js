@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (scrollTop + clientHeight >= scrollHeight - 10) {
             if (!search) {
                 pageNum++;
-                searchPhotos("curated", pageNum);
+                searchPhotos("random", pageNum);
             } else {
                 if (searchTerm === "") return;
                 pageNum++;
@@ -77,5 +77,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    searchPhotos("curated", pageNum);
+    searchPhotos("random", pageNum);
 });
