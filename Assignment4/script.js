@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Infinite Scroll
     window.addEventListener("scroll", () => {
         const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
@@ -78,6 +77,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initial load of curated photos
     searchPhotos("curated", pageNum);
 });
