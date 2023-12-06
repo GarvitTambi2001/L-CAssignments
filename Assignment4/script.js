@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
     }
 
-    function displayImagesHtml(photos) {
+    function displayPhotos(photos) {
         photos.forEach((image) => {
             const photo = document.createElement("div");
             photo.innerHTML = `
@@ -56,12 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const url = `https://api.pexels.com/v1/search?query=${query}&page=${pageNum}`;
             const data = await fetchPhotos(url);
-            displayImagesHtml(data.photos);
+            displayPhotos(data.photos);
         } catch (error) {
             console.error("Error searching for images:", error);
         }
     }
 
+    // Infinite Scroll
     window.addEventListener("scroll", () => {
         const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
@@ -77,5 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Initial load of curated photos
     searchPhotos("curated", pageNum);
 });
