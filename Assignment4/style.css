@@ -47,12 +47,6 @@ h1 {
     transform: scale(1.1);
 }
 
-figcaption {
-    font-weight: bold;
-    font-size: 15px;
-    margin-top: 0.7rem;
-}
-
 button {
     background-color: #4CAF50;
     color: white;
