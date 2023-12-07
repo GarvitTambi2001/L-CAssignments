@@ -42,12 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
     }
 
-    function displayPhotos(photos) {
+    function displayImagesHtml(photos) {
         photos.forEach((image) => {
             const photo = document.createElement("div");
             photo.innerHTML = `
-                <img src=${image.src.large} alt="Photo by ${image.photographer}">
-                <figcaption> Photo By: ${image.photographer}📸</figcaption>`;
+                <img src=${image.src.large} alt="Photo by ${image.photographer}">`;
             displayImages.appendChild(photo);
         });
     }
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const url = `https://api.pexels.com/v1/search?query=${query}&page=${pageNum}`;
             const data = await fetchPhotos(url);
-            displayPhotos(data.photos);
+            displayImagesHtml(data.photos);
         } catch (error) {
             console.error("Error searching for images:", error);
         }
